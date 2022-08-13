@@ -243,7 +243,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &23093945
 MonoBehaviour:
@@ -265,13 +265,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 577962853627621160, guid: d90b6b1aea94f274eb0ba7064bbd9862, type: 3}
+      propertyPath: m_BodyType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3147177865791306562, guid: d90b6b1aea94f274eb0ba7064bbd9862, type: 3}
       propertyPath: m_Name
       value: Basket
       objectReference: {fileID: 0}
     - target: {fileID: 3147177865791306563, guid: d90b6b1aea94f274eb0ba7064bbd9862, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3147177865791306563, guid: d90b6b1aea94f274eb0ba7064bbd9862, type: 3}
       propertyPath: m_LocalPosition.x
@@ -291,15 +295,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3147177865791306563, guid: d90b6b1aea94f274eb0ba7064bbd9862, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3147177865791306563, guid: d90b6b1aea94f274eb0ba7064bbd9862, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3147177865791306563, guid: d90b6b1aea94f274eb0ba7064bbd9862, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3147177865791306563, guid: d90b6b1aea94f274eb0ba7064bbd9862, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -354,6 +358,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2317589536160910277, guid: d90b6b1aea94f274eb0ba7064bbd9862, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3147177865791306562, guid: d90b6b1aea94f274eb0ba7064bbd9862, type: 3}
       propertyPath: m_Name
       value: Basket (1)
@@ -404,6 +412,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d90b6b1aea94f274eb0ba7064bbd9862, type: 3}
+--- !u!1 &357595224 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3147177866057490855, guid: d90b6b1aea94f274eb0ba7064bbd9862, type: 3}
+  m_PrefabInstance: {fileID: 157993228}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &357595228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 357595224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcc1d29b5dff2cd488cc336343e61104, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -586,7 +611,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -968,7 +993,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

@@ -1,5 +1,76 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2647871858823732443
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 474843754167245254}
+  - component: {fileID: 745775910276079450}
+  - component: {fileID: 3572278863089641698}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &474843754167245254
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2647871858823732443}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3147177865791306563}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &745775910276079450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2647871858823732443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3218333920f81244be72ed0be6ca056, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Basket: {fileID: 3147177865791306562}
+--- !u!61 &3572278863089641698
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2647871858823732443}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0557366, y: -0.3831519}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.38881934, y: 0.07994008}
+  m_EdgeRadius: 0
 --- !u!1 &3147177865791306562
 GameObject:
   m_ObjectHideFlags: 0
@@ -33,6 +104,7 @@ Transform:
   - {fileID: 3147177867137283194}
   - {fileID: 3147177866057490872}
   - {fileID: 3147177866349619920}
+  - {fileID: 474843754167245254}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -50,21 +122,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _offset: 0
   _ballRigidbody: {fileID: 0}
-  _unityEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  _activeBasket: {fileID: 0}
+  IsReadyToJump: 0
 --- !u!54 &4757041779489972058
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -194,9 +253,9 @@ EdgeCollider2D:
   m_EdgeRadius: 0
   m_Points:
   - {x: -0.7723951, y: 0.30342522}
-  - {x: -0.39589775, y: -0.13735211}
-  - {x: -0.0074490914, y: -0.31776392}
-  - {x: 0.42986056, y: -0.13172537}
+  - {x: -0.24638696, y: -0.22518225}
+  - {x: -0.0044082953, y: -0.30521053}
+  - {x: 0.35548413, y: -0.16645877}
   - {x: 0.7837214, y: 0.32509845}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}

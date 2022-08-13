@@ -10,7 +10,7 @@ public class BallController : MonoBehaviour
         _ballRigidbody2D = GetComponent<Rigidbody2D>();
     }
 
-    public void ThroughOfBall(Rigidbody2D rigidbody2D, float forceOfThrough)
+    public void ThroughOfBall(Rigidbody2D rigidbody2D, float forceOfThrough,Quaternion quaternion)
     {
         rigidbody2D.AddForce(new Vector2(0,forceOfThrough), ForceMode2D.Impulse);
     }
