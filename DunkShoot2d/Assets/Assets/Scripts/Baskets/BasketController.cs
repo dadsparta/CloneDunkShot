@@ -2,10 +2,20 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class BasketController : MonoBehaviour
 {
      [SerializeField] private float _offset;
+     [SerializeField]private Rigidbody2D _ballRigidbody;
+     [SerializeField] private float ThroughForce;
+
+     private BallController _ballController;
+     private void Start()
+     {
+          _ballController = GameObject.FindWithTag("Ball").GetComponent<BallController>();     
+          _ballRigidbody = GameObject.FindWithTag("Ball").GetComponent<Rigidbody2D>();
+     }
 
      private void Update()
      {
@@ -24,11 +34,20 @@ public class BasketController : MonoBehaviour
      private void OnMouseDown()
      {
           BallStateController.IsPressed = true;
-
      }
 
      private void OnMouseUp()
      {
           BallStateController.IsPressed = false;
+          _ballController.ThroughOfBall(_ballRigidbody,BallParametersDatabase.ForceOfThrough);
+          BallStateController.IsInBasket = false;
+     }
+
+     private void OnCollisionEnter2D(Collision2D col)
+     {
+          if (col.gameObject == col.gameObject.CompareTag("Ball"))
+          {
+               BallStateController.IsInBasket = true;
+          }
      }
 }
