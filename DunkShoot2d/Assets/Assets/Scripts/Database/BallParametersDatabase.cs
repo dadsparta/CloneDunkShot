@@ -4,5 +4,5 @@ using UnityEngine;
 
 public static class BallParametersDatabase
 {
-    public static float ForceOfThrough { get; set; } = 100;
+    public static float ForceOfThrough { get; set; } = 10;
 }

@@ -21,13 +21,14 @@ public class BasketController : MonoBehaviour
      {
           if (BallStateController.IsPressed)
           {
-               Vector3 worldMousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-               float rotationZ = Mathf.Atan2(worldMousePosition.y, worldMousePosition.x) * Mathf.Rad2Deg;
-               transform.rotation = Quaternion.Euler(0f,0f, rotationZ + _offset);
-               
-               Vector3 localScale = Vector3.one;
-
-               transform.localScale = localScale;
+               if (BallStateController.IsInBasket)
+               {
+                    Vector3 worldMousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+                    float rotationZ = Mathf.Atan2(worldMousePosition.y, worldMousePosition.x) * Mathf.Rad2Deg; 
+                    transform.rotation = Quaternion.Euler(0f,0f, rotationZ + _offset);
+                    Vector3 localScale = Vector3.one;
+                    transform.localScale = localScale;
+               }
           }
      }
 
@@ -39,15 +40,10 @@ public class BasketController : MonoBehaviour
      private void OnMouseUp()
      {
           BallStateController.IsPressed = false;
-          _ballController.ThroughOfBall(_ballRigidbody,BallParametersDatabase.ForceOfThrough);
-          BallStateController.IsInBasket = false;
-     }
-
-     private void OnCollisionEnter2D(Collision2D col)
-     {
-          if (col.gameObject == col.gameObject.CompareTag("Ball"))
+          if (BallStateController.IsInBasket)
           {
-               BallStateController.IsInBasket = true;
+               _ballController.ThroughOfBall(_ballRigidbody,BallParametersDatabase.ForceOfThrough);
           }
+          BallStateController.IsInBasket = false;
      }
 }
