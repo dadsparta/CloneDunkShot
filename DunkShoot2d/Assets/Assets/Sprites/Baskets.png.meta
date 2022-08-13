@@ -1,0 +1,1032 @@
+fileFormatVersion: 2
+guid: bc6c7552fd0b92448a6a7cb8140a6c5a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8200103102250130287
+    second: Baskets_0
+  - first:
+      213: -7008674732003118897
+    second: Baskets_1
+  - first:
+      213: -2543145920652045026
+    second: Baskets_2
+  - first:
+      213: -4060328639305929361
+    second: Baskets_3
+  - first:
+      213: 4040826541178897561
+    second: Baskets_4
+  - first:
+      213: 7520270176292272422
+    second: Baskets_5
+  - first:
+      213: -2278775596568641792
+    second: Baskets_6
+  - first:
+      213: -8770817367906860786
+    second: Baskets_7
+  - first:
+      213: 6420246921940193842
+    second: Baskets_8
+  - first:
+      213: 1397988265754206276
+    second: Baskets_9
+  - first:
+      213: -4157434606800905144
+    second: Baskets_10
+  - first:
+      213: -5688294355133294354
+    second: Baskets_11
+  - first:
+      213: -5278286126199888937
+    second: Baskets_12
+  - first:
+      213: -3785209225375937996
+    second: Baskets_13
+  - first:
+      213: 857588592495157044
+    second: Baskets_14
+  - first:
+      213: 5374921617586149571
+    second: Baskets_15
+  - first:
+      213: 6784192090119512743
+    second: Baskets_16
+  - first:
+      213: -6976336373374372184
+    second: Baskets_17
+  - first:
+      213: -6502831946385773710
+    second: Baskets_18
+  - first:
+      213: 4201718443370165560
+    second: Baskets_19
+  - first:
+      213: -1453857651920797264
+    second: Baskets_20
+  - first:
+      213: 1001384045596795987
+    second: Baskets_21
+  - first:
+      213: -7465125293219422915
+    second: Baskets_22
+  - first:
+      213: -244314858025357985
+    second: Baskets_23
+  - first:
+      213: -8703112303442232913
+    second: Baskets_24
+  - first:
+      213: -4167244267473565529
+    second: Baskets_25
+  - first:
+      213: 1805107064602225042
+    second: Baskets_26
+  - first:
+      213: 6223375939189066021
+    second: Baskets_27
+  - first:
+      213: 8693578309652348505
+    second: Baskets_28
+  - first:
+      213: 8757739285783775668
+    second: Baskets_29
+  - first:
+      213: -2391649687636097300
+    second: Baskets_30
+  - first:
+      213: 9127122255043849547
+    second: Baskets_31
+  - first:
+      213: 5902913512626356963
+    second: Baskets_32
+  - first:
+      213: 4134376401913858478
+    second: Baskets_33
+  - first:
+      213: -2632612584350977556
+    second: Baskets_34
+  - first:
+      213: -6352148070301790497
+    second: Baskets_35
+  - first:
+      213: 3646990723150170920
+    second: Baskets_36
+  - first:
+      213: 4876931138867339848
+    second: Baskets_37
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 200
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Baskets_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1164
+        width: 966
+        height: 965
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6b9233535e9cc170800000000000000
+      internalID: 8200103102250130287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Baskets_1
+      rect:
+        serializedVersion: 2
+        x: 1347
+        y: 1163
+        width: 326
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc0b2bcf67f2cbe90800000000000000
+      internalID: -7008674732003118897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Baskets_2
+      rect:
+        serializedVersion: 2
+        x: 1686
+        y: 1242
+        width: 373
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e151d83624ee4bcd0800000000000000
+      internalID: -2543145920652045026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Baskets_3
+      rect:
+        serializedVersion: 2
+        x: 2083
+        y: 1203
+        width: 373
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6d23d67d90d6a7c0800000000000000
+      internalID: -4060328639305929361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Baskets_4
+      rect:
+        serializedVersion: 2
+        x: 2470
+        y: 1163
+        width: 324
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99440f97456e31830800000000000000
+      internalID: 4040826541178897561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Baskets_5
+      rect:
+        serializedVersion: 2
+        x: 986
+        y: 1166
+        width: 345
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6297dd891ed5d5860800000000000000
+      internalID: 7520270176292272422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Baskets_6
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1038
+        width: 388
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00f72bb1ba92060e0800000000000000
+      internalID: -2278775596568641792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Baskets_7
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 1038
+        width: 387
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e01c51cd21cc74680800000000000000
+      internalID: -8770817367906860786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Baskets_8
+      rect:
+        serializedVersion: 2
+        x: 796
+        y: 997
+        width: 386
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2325a804f8c491950800000000000000
+      internalID: 6420246921940193842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Baskets_9
+      rect:
+        serializedVersion: 2
+        x: 1193
+        y: 997
+        width: 386
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 440a17cbbe6a66310800000000000000
+      internalID: 1397988265754206276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Baskets_10
+      rect:
+        serializedVersion: 2
+        x: 1596
+        y: 1047
+        width: 375
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84c57bc8043dd46c0800000000000000
+      internalID: -4157434606800905144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Baskets_11
+      rect:
+        serializedVersion: 2
+        x: 1993
+        y: 1047
+        width: 375
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee89b600c6e1f01b0800000000000000
+      internalID: -5688294355133294354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Baskets_12
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 815
+        width: 375
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d3abf8dbb2cfb6b0800000000000000
+      internalID: -5278286126199888937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Baskets_13
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 815
+        width: 375
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43a8fe0b34c387bc0800000000000000
+      internalID: -3785209225375937996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Baskets_14
+      rect:
+        serializedVersion: 2
+        x: 802
+        y: 852
+        width: 377
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43fd91bf744c6eb00800000000000000
+      internalID: 857588592495157044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Baskets_15
+      rect:
+        serializedVersion: 2
+        x: 1199
+        y: 852
+        width: 377
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c85acfcbbe879a40800000000000000
+      internalID: 5374921617586149571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Baskets_16
+      rect:
+        serializedVersion: 2
+        x: 1594
+        y: 814
+        width: 378
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a2a69303ca462e50800000000000000
+      internalID: 6784192090119512743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Baskets_17
+      rect:
+        serializedVersion: 2
+        x: 1991
+        y: 814
+        width: 378
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a63267d7031f2f90800000000000000
+      internalID: -6976336373374372184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Baskets_18
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 660
+        width: 376
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27b2d995ccc41c5a0800000000000000
+      internalID: -6502831946385773710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Baskets_19
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 660
+        width: 376
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 835394f99a08f4a30800000000000000
+      internalID: 4201718443370165560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Baskets_20
+      rect:
+        serializedVersion: 2
+        x: 802
+        y: 611
+        width: 376
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b1074f1b2cd2dbe0800000000000000
+      internalID: -1453857651920797264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Baskets_21
+      rect:
+        serializedVersion: 2
+        x: 1199
+        y: 612
+        width: 376
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3546a81eb71a5ed00800000000000000
+      internalID: 1001384045596795987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Baskets_22
+      rect:
+        serializedVersion: 2
+        x: 1593
+        y: 658
+        width: 380
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3d5fd5091c866890800000000000000
+      internalID: -7465125293219422915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Baskets_23
+      rect:
+        serializedVersion: 2
+        x: 1990
+        y: 658
+        width: 382
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5d6c0a5ee40c9cf0800000000000000
+      internalID: -244314858025357985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Baskets_24
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 420
+        width: 380
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa97ef89875583780800000000000000
+      internalID: -8703112303442232913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Baskets_25
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 420
+        width: 380
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a884f0fa69fa26c0800000000000000
+      internalID: -4167244267473565529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Baskets_26
+      rect:
+        serializedVersion: 2
+        x: 803
+        y: 466
+        width: 374
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 299e927bf470d0910800000000000000
+      internalID: 1805107064602225042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Baskets_27
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 466
+        width: 374
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 529c31f917fdd5650800000000000000
+      internalID: 6223375939189066021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Baskets_28
+      rect:
+        serializedVersion: 2
+        x: 1597
+        y: 427
+        width: 374
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95e7edd796bc5a870800000000000000
+      internalID: 8693578309652348505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Baskets_29
+      rect:
+        serializedVersion: 2
+        x: 1994
+        y: 427
+        width: 374
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b900acda7db98970800000000000000
+      internalID: 8757739285783775668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Baskets_30
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 263
+        width: 376
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce6c645d7472fced0800000000000000
+      internalID: -2391649687636097300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Baskets_31
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 263
+        width: 376
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4d6379555d0aae70800000000000000
+      internalID: 9127122255043849547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Baskets_32
+      rect:
+        serializedVersion: 2
+        x: 802
+        y: 215
+        width: 375
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e282f3909c5be150800000000000000
+      internalID: 5902913512626356963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Baskets_33
+      rect:
+        serializedVersion: 2
+        x: 1199
+        y: 215
+        width: 375
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea945d3ce61406930800000000000000
+      internalID: 4134376401913858478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Baskets_34
+      rect:
+        serializedVersion: 2
+        x: 1596
+        y: 267
+        width: 376
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce1798e7dc4177bd0800000000000000
+      internalID: -2632612584350977556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Baskets_35
+      rect:
+        serializedVersion: 2
+        x: 1993
+        y: 267
+        width: 376
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fde8af43cf2a8d7a0800000000000000
+      internalID: -6352148070301790497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Baskets_36
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 28
+        width: 376
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82bc2887db6bc9230800000000000000
+      internalID: 3646990723150170920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Baskets_37
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 28
+        width: 376
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 842aa3e18075ea340800000000000000
+      internalID: 4876931138867339848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
