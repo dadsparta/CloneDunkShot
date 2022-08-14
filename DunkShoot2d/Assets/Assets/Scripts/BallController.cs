@@ -1,26 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
+using Assets.Scripts;
 using UnityEngine;
 
 public class BallController : MonoBehaviour
 {
-    
-        private Rigidbody2D _rb;
-        public DistanceJoint2D DistanceJoint2D { get; private set; }
-        [SerializeField] private CameraTarget _target;
-        [SerializeField] private ScoreLabel _scoreLabel;
-        private float _posY;
-        private string _bonus = "";
-        private int _score = 2;
-        [SerializeField] private AudioClip _clip1;
-        [SerializeField] private AudioClip _clip2;
-        [SerializeField] private AudioClip _clip3;
-        [SerializeField] private AudioSource _audio;
+    [SerializeField] private CameraTarget _target;
+    [SerializeField] private ScoreLabel _scoreLabel;
+    [SerializeField] private AudioClip _clip1;
+    [SerializeField] private AudioClip _clip2;
+    [SerializeField] private AudioClip _clip3;
+    [SerializeField] private AudioSource _audio;
+    public DistanceJoint2D DistanceJoint2D { get; private set; }
+    private Rigidbody2D _rb; 
+    private float _posY;
+    private string _bonus = "";
+    private int _score = 2;
     private void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
         DistanceJoint2D = GetComponent<DistanceJoint2D>();
-        BasketManager.instance.signal.AddListener(SpawnInit);
+        BasketInputController.instance.signal.AddListener(SpawnInit);
     }
 
     public void Fire(Vector2 speed)
