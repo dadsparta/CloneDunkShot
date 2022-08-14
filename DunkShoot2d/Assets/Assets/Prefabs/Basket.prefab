@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53abbc1c7f64e22409a37fced77b5b86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _offset: 0
+  _offset: -100
   _ballRigidbody: {fileID: 0}
   _activeBasket: {fileID: 0}
   IsReadyToJump: 0
@@ -164,6 +164,7 @@ GameObject:
   - component: {fileID: 3147177866057490872}
   - component: {fileID: 3147177866057490874}
   - component: {fileID: 3147177866057490873}
+  - component: {fileID: 2478421594057501938}
   m_Layer: 0
   m_Name: BasketMash
   m_TagString: BacketMesh
@@ -261,6 +262,18 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &2478421594057501938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3147177866057490855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcc1d29b5dff2cd488cc336343e61104, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3147177866349619935
 GameObject:
   m_ObjectHideFlags: 0
