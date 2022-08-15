@@ -1,82 +1,51 @@
 using System.Collections;
 using System.Collections.Generic;
-using Assets.Scripts;
 using UnityEngine;
 
 public class BallController : MonoBehaviour
 {
-    [SerializeField] private CameraTarget _target;
-    [SerializeField] private ScoreLabel _scoreLabel;
-    [SerializeField] private AudioClip _clip1;
-    [SerializeField] private AudioClip _clip2;
-    [SerializeField] private AudioClip _clip3;
-    [SerializeField] private AudioSource _audio;
-    public DistanceJoint2D DistanceJoint2D { get; private set; }
-    private Rigidbody2D _rb; 
-    private float _posY;
-    private string _bonus = "";
-    private int _score = 2;
-    private void Start()
-    {
-        _rb = GetComponent<Rigidbody2D>();
-        DistanceJoint2D = GetComponent<DistanceJoint2D>();
-        BasketInputController.instance.signal.AddListener(SpawnInit);
-    }
+    private Rigidbody2D rb;
 
-    public void Fire(Vector2 speed)
+    private void Awake()
     {
-        DistanceJoint2D.enabled = false;
-        DistanceJoint2D.connectedBody = null;
-        _posY = transform.position.y;
-        _rb.AddForce(speed, ForceMode2D.Impulse);
-        _posY = transform.position.y;
-        _audio.PlayOneShot(_clip1);
+        rb = GetComponent<Rigidbody2D>();
     }
 
 
-
-    public void Losed()
+    public void ActivateRb()
     {
-        _target.transform.parent = null;
-        GameManager.instance.LosedGame();
+        rb.isKinematic = false;
+            
     }
 
-    private void SpawnScoreLabel(string s)
+    public void DeactivateRb()
     {
-        var label = Instantiate(_scoreLabel, transform.position, Quaternion.identity);
-        label.Init(s);
-    }
-    private async void SpawnInit()
-    {
-        if (_bonus != "")
+        if (BallStatesDatabase.IsInBasket)
         {
-            SpawnScoreLabel(_bonus);
-            await Task.Delay(1000);
+            rb.isKinematic = true;
+            rb.velocity = Vector2.zero;
+            rb.angularVelocity = 0f;
         }
-        SpawnScoreLabel(_score.ToString());
-        GameManager.instance.AddScore(_score);
-        _bonus = "";
-        _score = 2;
+            
+
     }
-    private void OnCollisionEnter2D(Collision2D other)
+
+    public void AddForce(Vector2 force)
     {
-        if (other.gameObject.GetComponent<CameraBorder>())
+        if (!BallStatesDatabase.IsInBasket)
         {
-            _score += 2;
-            _bonus = "Bonus";
-            _audio.PlayOneShot(_clip2);
-        }
-        else if (other.gameObject.CompareTag("basket"))
-        {
-            if (_score == 2)
-                _score -= 1;
-            _audio.PlayOneShot(_clip2);
+            rb.AddForce(force, ForceMode2D.Impulse);
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+
+    public Vector2 GetBallPos()
     {
-        if (other.GetComponent<Basket>()) 
-            _audio.PlayOneShot(_clip3);
+        return transform.position;
+    }
+
+    public void SetBallPos(Vector2 position)
+    {
+        transform.position = position;
     }
 }

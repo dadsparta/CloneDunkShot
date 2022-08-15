@@ -1,47 +1,61 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TrajectoryController : MonoBehaviour
+namespace Assets.Scripts
 {
+    public class TrajectoryController : MonoBehaviour
+    {
     
-    [SerializeField] private GameObject _ball;
+        [SerializeField] private GameObject pointPrefab;
+        [SerializeField] private Transform pointParent;
 
-    private LineRenderer _line;
-    private void Start()
-    {
-        _line = GetComponent<LineRenderer>();
-        InputManager.instance.OnMouseUp.AddListener(SetPosCountLine);
-    }
+        List<Transform> pathPoints;
+
+        public int maxPoints = 20;
+        public float offset = 0.5f;
+        private float _deltaTime;
+        private Vector2 _pointPos;
 
 
-    private void SetPosCountLine()
-    {
-        _line.positionCount = 0;
-    }
-
-    public void ShowTrajectory(Vector3 speed)
-    {
-        // подготовка
-        var ball = Instantiate(_ball, transform.position, Quaternion.identity);
-        ball.GetComponent<Rigidbody2D>().AddForce(speed, ForceMode2D.Impulse);
-
-        Physics2D.simulationMode = SimulationMode2D.Script;
-        //симуляция
-        Vector3[] points = new Vector3[50];
-        _line.positionCount = points.Length;
-        for (int i = 0; i < points.Length; i++)
+        private void Start()
         {
-            Physics2D.Simulate(Time.fixedDeltaTime);
-            points[i] = ball.transform.position;
+            pathPoints = new List<Transform>();
+            Hide();
+            for (int i = 0; i < maxPoints; i++)
+            {
+                Transform tr = Instantiate(pointPrefab).transform;
+                tr.SetParent(pointParent);
+                pathPoints.Add(tr);
+            }
         }
 
-        _line.SetPositions(points);
+        public void UpdatePoints(Vector2 startPos , Vector2 force)
+        {
+            _deltaTime = offset;
+
+            for (int i = 0; i < maxPoints; i++)
+            {
+                _pointPos.x = startPos.x + force.x * _deltaTime;
+                _pointPos.y = startPos.y + force.y * _deltaTime - Physics2D.gravity.magnitude * _deltaTime * _deltaTime * 0.5f;
+
+                pathPoints[i].position = _pointPos;
+
+                _deltaTime += offset;
+            }
+        }
 
 
-        Physics2D.simulationMode = SimulationMode2D.FixedUpdate;
+        public void Hide()
+        {
+            pointParent.gameObject.SetActive(false);
+        }
 
-        //зачистка
-        Destroy(ball);
+        public void Show()
+        {
+            if (!BallStatesDatabase.IsInBasket)
+            {
+                pointParent.gameObject.SetActive(true);
+            }
+        }
     }
 }
