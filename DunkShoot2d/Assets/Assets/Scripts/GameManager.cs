@@ -25,8 +25,8 @@ public class GameManager : MonoBehaviour
 
     private float _forceOffset;
     private float _distance;
-    private float _minSpawnBacketX;
-    private float _maxSpawnBacketX;
+    private float _minSpawnBasketX;
+    private float _maxSpawnBasketX;
     private Camera _mainCamera;
     private Vector2 _startPos;
     private Vector2 _endPos;
@@ -36,6 +36,7 @@ public class GameManager : MonoBehaviour
     private Vector2 _gameOverLinePos;
     
     private int _indexOfBaskets = 0;
+
     private float _basketOffsetX;
     public float basketOffsetY;
 
@@ -58,13 +59,13 @@ public class GameManager : MonoBehaviour
         _indexOfBaskets = 0;
         cameraOffset = (_camPos - ball.GetBallPos()).y;
         _forceOffset = 5f;
-        _minSpawnBacketX = -1.38f;
-        _maxSpawnBacketX = 2.14f;
+        _minSpawnBasketX = -1.38f;
+        _maxSpawnBasketX = 2.14f;
         _mainCamera = Camera.main;
         ball.ActivateRb();
         
         SetDefaultGamePos();
-    }
+    }       
 
 
     private void Update()
@@ -94,8 +95,7 @@ public class GameManager : MonoBehaviour
             ball.DeactivateRb();
         }
     }
-
-    // Starting the mouse drag.
+    
     private void OnDragStart()
     {
         BallStatesDatabase.IsInDragArea = false;
@@ -115,8 +115,7 @@ public class GameManager : MonoBehaviour
         _endPos = _mainCamera.ScreenToWorldPoint(Input.mousePosition);
         _direction = (_startPos - _endPos).normalized;
         _distance = Vector2.Distance(_startPos,_endPos);
-
-        //Calculating force applyimg to the ball.
+        
         _ballForce = _distance * _direction * _forceOffset;
 
         _trajectory.UpdatePoints(ball.GetBallPos(), _ballForce);
@@ -145,26 +144,19 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-        GameStateDatabase.IsGameOver = true;
+        BasketDataBase.IsFirstBasket = true;
         SceneManager.LoadScene(0);
-        GameStateDatabase.IsGameOver = false;
         SetDefaultGamePos();
     }
 
     public void UpdateBasket()
     {
-        Debug.Log(BasketDataBase.RepeatingOfBasket0 + "" + BasketDataBase.RepeatingOfBasket1);
-        if (_indexOfBaskets == 0)
         {
-            if (BasketDataBase.RepeatingOfBasket0 == 0)
+            if (!BasketDataBase.IsFirstBasket)
             {
-                BasketDataBase.RepeatingOfBasket0 = 1;
-                BasketDataBase.RepeatingOfBasket1 = 0;
-                
-                Debug.Log("Indexxxx :: "+_indexOfBaskets);
-                float basketSpawnX = Random.Range(_minSpawnBacketX, _maxSpawnBacketX);
+                float basketSpawnX = Random.Range(_minSpawnBasketX, _maxSpawnBasketX);
                 Vector2 basketPos = new Vector2(basketSpawnX, (ball.GetBallPos().y + basketOffsetY));
-                basketList[1].GetComponentInChildren<BasketController>().UpdateBasket(basketPos);
+                basketList[_indexOfBaskets].GetComponentInChildren<BasketController>().UpdateBasket(basketPos);
                 
                 if (_indexOfBaskets == 0)
                 {
@@ -175,35 +167,12 @@ public class GameManager : MonoBehaviour
                     _indexOfBaskets = 0;
                 }
             }
-        }
-        
-        else if (_indexOfBaskets == 1)
-        {
-            if (BasketDataBase.RepeatingOfBasket1 == 0)
-            {
-                BasketDataBase.RepeatingOfBasket0 = 0;
-                BasketDataBase.RepeatingOfBasket1 = 1;
-                
-                Debug.Log("Indexxxx :: "+_indexOfBaskets);
-                float basketSpawnX = Random.Range(_minSpawnBacketX, _maxSpawnBacketX);
-                Vector2 basketPos = new Vector2(basketSpawnX, (ball.GetBallPos().y + basketOffsetY));
-                basketList[0].GetComponentInChildren<BasketController>().UpdateBasket(basketPos);
-                
-                if (_indexOfBaskets == 0)
-                {
-                    _indexOfBaskets = 1;
-                }
-                else
-                {
-                    _indexOfBaskets = 0;
-                }
-            }
-            
+
+            BasketDataBase.IsFirstBasket = false;
         }
         
     }
-
-
+    
     private void ResetBasket()
     {
         for (int i = 0; i < basketList.Count; i++)
