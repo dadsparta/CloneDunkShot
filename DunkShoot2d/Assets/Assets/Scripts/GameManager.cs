@@ -2,7 +2,10 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Assets.Scripts;
+using Assets.Scripts.Database;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using Random = UnityEngine.Random;
 
 public class GameManager : MonoBehaviour
 {
@@ -21,7 +24,9 @@ public class GameManager : MonoBehaviour
     public float cameraOffset;
 
     private float _forceOffset;
-    private float _disatce;
+    private float _distance;
+    private float _minSpawnBacketX;
+    private float _maxSpawnBacketX;
     private Camera _mainCamera;
     private Vector2 _startPos;
     private Vector2 _endPos;
@@ -44,6 +49,7 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        if(instance == null)
         instance = this;    
     }
 
@@ -52,10 +58,11 @@ public class GameManager : MonoBehaviour
         _indexOfBaskets = 0;
         cameraOffset = (_camPos - ball.GetBallPos()).y;
         _forceOffset = 5f;
+        _minSpawnBacketX = -1.38f;
+        _maxSpawnBacketX = 2.14f;
         _mainCamera = Camera.main;
         ball.ActivateRb();
-
-        UpdateBasket();
+        
         SetDefaultGamePos();
     }
 
@@ -107,10 +114,10 @@ public class GameManager : MonoBehaviour
     {
         _endPos = _mainCamera.ScreenToWorldPoint(Input.mousePosition);
         _direction = (_startPos - _endPos).normalized;
-        _disatce = Vector2.Distance(_startPos,_endPos);
+        _distance = Vector2.Distance(_startPos,_endPos);
 
         //Calculating force applyimg to the ball.
-        _ballForce = _disatce * _direction * _forceOffset;
+        _ballForce = _distance * _direction * _forceOffset;
 
         _trajectory.UpdatePoints(ball.GetBallPos(), _ballForce);
     }
@@ -139,24 +146,61 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         GameStateDatabase.IsGameOver = true;
-        ResetBasket();
-        ScoreHandler.instance.OnGameOver();
+        SceneManager.LoadScene(0);
+        GameStateDatabase.IsGameOver = false;
+        SetDefaultGamePos();
     }
 
     public void UpdateBasket()
     {
-        Debug.Log("Indexxxx :: "+_indexOfBaskets);
-        Vector2 basketPos = new Vector2(basketList[_indexOfBaskets].transform.position.x, (ball.GetBallPos().y + basketOffsetY));
-        basketList[_indexOfBaskets].GetComponentInChildren<BasketController>().UpdateBasket(basketPos);
-
+        Debug.Log(BasketDataBase.RepeatingOfBasket0 + "" + BasketDataBase.RepeatingOfBasket1);
         if (_indexOfBaskets == 0)
         {
-            _indexOfBaskets = 1;
+            if (BasketDataBase.RepeatingOfBasket0 == 0)
+            {
+                BasketDataBase.RepeatingOfBasket0 = 1;
+                BasketDataBase.RepeatingOfBasket1 = 0;
+                
+                Debug.Log("Indexxxx :: "+_indexOfBaskets);
+                float basketSpawnX = Random.Range(_minSpawnBacketX, _maxSpawnBacketX);
+                Vector2 basketPos = new Vector2(basketSpawnX, (ball.GetBallPos().y + basketOffsetY));
+                basketList[1].GetComponentInChildren<BasketController>().UpdateBasket(basketPos);
+                
+                if (_indexOfBaskets == 0)
+                {
+                    _indexOfBaskets = 1;
+                }
+                else
+                {
+                    _indexOfBaskets = 0;
+                }
+            }
         }
-        else
+        
+        else if (_indexOfBaskets == 1)
         {
-            _indexOfBaskets = 0;
+            if (BasketDataBase.RepeatingOfBasket1 == 0)
+            {
+                BasketDataBase.RepeatingOfBasket0 = 0;
+                BasketDataBase.RepeatingOfBasket1 = 1;
+                
+                Debug.Log("Indexxxx :: "+_indexOfBaskets);
+                float basketSpawnX = Random.Range(_minSpawnBacketX, _maxSpawnBacketX);
+                Vector2 basketPos = new Vector2(basketSpawnX, (ball.GetBallPos().y + basketOffsetY));
+                basketList[0].GetComponentInChildren<BasketController>().UpdateBasket(basketPos);
+                
+                if (_indexOfBaskets == 0)
+                {
+                    _indexOfBaskets = 1;
+                }
+                else
+                {
+                    _indexOfBaskets = 0;
+                }
+            }
+            
         }
+        
     }
 
 
@@ -179,13 +223,7 @@ public class GameManager : MonoBehaviour
         UpdateBasket();
     }
 
-    public void UpdateGameOverLine()
-    {
-        _gameOverLinePos = new Vector2(_gameOverController.GetPosition().x, (ball.GetBallPos().y - basketOffsetY*2));
-        _gameOverController.SetPosition(_gameOverLinePos);
-    }
 
-    
     private void SetDefaultGamePos()
     {
         _ballStartPos = ball.GetBallPos();

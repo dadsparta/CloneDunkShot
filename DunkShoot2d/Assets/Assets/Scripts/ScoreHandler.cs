@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ScoreHandler : MonoBehaviour
 {
@@ -17,8 +18,8 @@ public class ScoreHandler : MonoBehaviour
         ScoreStateDatabase.Score++;
     }
 
-    public void OnGameOver()
+    public void OnGameOver(int scene)
     {
-        
+        SceneManager.LoadScene(scene);
     }
 }
