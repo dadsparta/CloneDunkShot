@@ -10,12 +10,7 @@ public class BasketController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("Trigger Entered :: " + collision.tag);
-        ScoreHandler.instance.UpdateScore();
-        GameManager.instance.UpdateBasket();
-    }
 
-    void UpdateBasketPos()
-    {
         GameManager.instance.UpdateBasket();
     }
 

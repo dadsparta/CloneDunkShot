@@ -36,16 +36,15 @@ public class GameManager : MonoBehaviour
 
     public List<GameObject> basketList = new List<GameObject>();
     
-    private Vector2 ballStartPos;
-    private Vector3 cameraStatPos;
-    private Vector2 gameOverLineStartPos;
+    private Vector2 _ballStartPos;
+    private Vector3 _cameraStartPos;
+    private Vector2 _gameOverLineStartPos;
 
     #endregion
 
     private void Awake()
     {
-        if (instance == null)
-            instance = this;
+        instance = this;    
     }
 
     private void Start()
@@ -74,6 +73,7 @@ public class GameManager : MonoBehaviour
         if(Input.GetMouseButtonUp(0))
         {
             BallStatesDatabase.IsBallDragging = false;
+            BallStatesDatabase.IsFirstBasket = false;
             OnDragEnd();
         }
 
@@ -94,9 +94,7 @@ public class GameManager : MonoBehaviour
         BallStatesDatabase.IsInDragArea = false;
         ball.DeactivateRb();
         _startPos = _mainCamera.ScreenToWorldPoint(Input.mousePosition);
-        Debug.Log("Start Pos :: "+ _startPos);
-        Debug.Log("ball.GetBallPos().y :: " + ball.GetBallPos().y);
-        if (_startPos.y < (ball.GetBallPos().y))
+        if (_startPos.y < ball.GetBallPos().y)
         {
             BallStatesDatabase.IsInDragArea = true;
             BallStatesDatabase.IsBallDragging = true;
@@ -104,8 +102,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-
-    // Continue the drag
+        
     private void OnDrag()
     {
         _endPos = _mainCamera.ScreenToWorldPoint(Input.mousePosition);
@@ -119,8 +116,6 @@ public class GameManager : MonoBehaviour
     }
 
 
-    //End of the mousedarg.
-    // appling force once mouse drag end.
     private void OnDragEnd()
     {
         if (BallStatesDatabase.IsInDragArea)
@@ -178,9 +173,9 @@ public class GameManager : MonoBehaviour
         ResetBasket();
         _indexOfBaskets = 0;
         GameStateDatabase.IsGameOver = false;
-        _mainCamera.transform.position = cameraStatPos;
-        ball.SetBallPos(ballStartPos);
-        _gameOverController.SetPosition(gameOverLineStartPos);
+        _mainCamera.transform.position = _cameraStartPos;
+        ball.SetBallPos(_ballStartPos);
+        _gameOverController.SetPosition(_gameOverLineStartPos);
         UpdateBasket();
     }
 
@@ -193,10 +188,10 @@ public class GameManager : MonoBehaviour
     
     private void SetDefaultGamePos()
     {
-        ballStartPos = ball.GetBallPos();
-        cameraStatPos = _mainCamera.transform.position;
-        cameraStatPos.z = -10f;
-        gameOverLineStartPos = _gameOverController.GetPosition();
+        _ballStartPos = ball.GetBallPos();
+        _cameraStartPos = _mainCamera.transform.position;
+        _cameraStartPos.z = -10f;
+        _gameOverLineStartPos = _gameOverController.GetPosition();
 
     }
 }

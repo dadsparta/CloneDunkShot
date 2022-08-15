@@ -9,7 +9,6 @@ namespace Assets.Scripts
         {
             if (col.gameObject.CompareTag("Ball"))
             {
-                BallStatesDatabase.IsInDragArea = true;
                 BallStatesDatabase.IsInBasket = true;
             }
         }

@@ -32,10 +32,8 @@ public class BallController : MonoBehaviour
 
     public void AddForce(Vector2 force)
     {
-        if (!BallStatesDatabase.IsInBasket)
-        {
-            rb.AddForce(force, ForceMode2D.Impulse);
-        }
+        rb.AddForce(force, ForceMode2D.Impulse);
+        
     }
 
 

@@ -9,5 +9,7 @@ public static class BallStatesDatabase
     public static bool IsBallDragging { get; set; }
     public static bool IsInDragArea { get; set; }
 
+    public static bool IsFirstBasket { get; set; }
+
 
 }
