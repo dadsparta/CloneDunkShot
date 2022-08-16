@@ -95,7 +95,6 @@ public class GameManager : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             BallStatesDatabase.IsInBasket = false;
-            ball.DeactivateRb();
             OnDragStart();
             if (GameStateDatabase.IsStartGame)
             {
@@ -108,6 +107,7 @@ public class GameManager : MonoBehaviour
         {
             BallStatesDatabase.IsBallDragging = false;
             BallStatesDatabase.IsFirstBasket = false;
+            BallStatesDatabase.IsInFly = true;
             OnDragEnd();
         }
 
@@ -116,16 +116,18 @@ public class GameManager : MonoBehaviour
             OnDrag();
         }
 
-        if (BallStatesDatabase.IsInBasket)
+        if (!BallStatesDatabase.IsInFly)
         {
-            ball.DeactivateRb();
+            if (BallStatesDatabase.IsInBasket)
+            {
+                ball.DeactivateRb();
+            }
         }
     }
 
     private void OnDragStart()
     {
         BallStatesDatabase.IsInDragArea = false;
-        ball.DeactivateRb();
         _startPos = _mainCamera.ScreenToWorldPoint(Input.mousePosition);
         if (_startPos.y < ball.GetBallPos().y)
         {

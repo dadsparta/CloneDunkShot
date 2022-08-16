@@ -10,6 +10,7 @@ namespace Assets.Scripts
         {
             if (col.gameObject.CompareTag("Ball"))
             {
+                BallStatesDatabase.IsInFly = false;
                 BallStatesDatabase.IsInBasket = true;
             }
         }
