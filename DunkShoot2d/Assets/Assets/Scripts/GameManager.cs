@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
 
 
     public static GameManager instance;
+    
     [SerializeField] private BallController ball;
     [SerializeField] private TrajectoryController _trajectory;
     [SerializeField] private GameObject basketPrefab;
@@ -33,7 +34,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject _mainUI;
     [SerializeField] private GameObject _pauseMenu;
     [SerializeField] private GameObject _deathMenu;
-    
+
     [Header("MainUiObjects")] [SerializeField]
     private TMP_Text _counter;
 

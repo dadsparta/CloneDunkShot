@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class BasketController : MonoBehaviour
 {
-
     [SerializeField] private Transform basketTransform;
+    [SerializeField] private GameObject Star;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -16,6 +16,7 @@ public class BasketController : MonoBehaviour
     public void UpdateBasket(Vector2 pos)
     {
         ScoreStateDatabase.Score++;
+        Star.SetActive(true);
         basketTransform.gameObject.SetActive(true);
         basketTransform.position = pos;
     }

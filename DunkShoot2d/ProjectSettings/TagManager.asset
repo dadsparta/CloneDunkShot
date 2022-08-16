@@ -8,6 +8,7 @@ TagManager:
   - BacketMesh
   - Ball
   - Background
+  - StarCounter
   layers:
   - Default
   - TransparentFX
