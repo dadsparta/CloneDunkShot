@@ -10,12 +10,7 @@ namespace Assets.Scripts
         {
             if (col.gameObject.CompareTag("Ball"))
             {
-                if (!BasketDataBase.IsFirstBasket)
-                {
-                    GameManager.instance.backgroundAnimator.Play("BackgroundChange");
-                }   
                 BallStatesDatabase.IsInBasket = true;
-
             }
         }
 

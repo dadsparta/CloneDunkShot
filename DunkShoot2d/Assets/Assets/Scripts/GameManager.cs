@@ -22,7 +22,14 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject basketPrefab;
     [SerializeField] private Transform basketParent;
     [SerializeField] private GameOverController _gameOverController;
-    [SerializeField] public Animator backgroundAnimator;
+
+    [Header("Backgrounds")] 
+    [SerializeField] private GameObject _whiteBackground;
+    [SerializeField] private GameObject _blackBackground;
+
+    [Header("ChangeBackgroundButtons")] 
+    [SerializeField] private GameObject _whiteChangeButton;
+    [SerializeField] private GameObject _blackChangeButton;
 
     [Header("AudioSources")] 
     [SerializeField] private AudioClip _hoopClip;
@@ -34,9 +41,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject _mainUI;
     [SerializeField] private GameObject _pauseMenu;
     [SerializeField] private GameObject _deathMenu;
-
-    [Header("MainUiObjects")] [SerializeField]
-    private TMP_Text _counter;
+    
+    [SerializeField]private TMP_Text _counter;
 
     public float cameraOffset;
 
@@ -238,6 +244,22 @@ public class GameManager : MonoBehaviour
     {
         mainMenu.SetActive(false);
         deathMenu.SetActive(true);   
+    }
+
+    public void ChangeColorOfBackgroundOnBlack()
+    {
+        _blackBackground.SetActive(true);
+        _whiteBackground.SetActive(false);
+        _whiteChangeButton.SetActive(false);
+        _blackChangeButton.SetActive(true);
+    }
+
+    public void ChangeColorOfBackgroundOnWhite()
+    {
+        _blackBackground.SetActive(false);
+        _whiteBackground.SetActive(true);
+        _blackChangeButton.SetActive(false);
+        _whiteChangeButton.SetActive(true);
     }
 
 }
