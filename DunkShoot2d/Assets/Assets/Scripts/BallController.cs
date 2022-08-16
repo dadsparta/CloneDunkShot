@@ -26,8 +26,6 @@ public class BallController : MonoBehaviour
             rb.velocity = Vector2.zero;
             rb.angularVelocity = 0f;
         }
-            
-
     }
 
     public void AddForce(Vector2 force)

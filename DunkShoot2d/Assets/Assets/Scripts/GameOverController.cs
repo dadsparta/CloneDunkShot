@@ -6,7 +6,6 @@ namespace Assets.Scripts
     {
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            Debug.Log("OnTriggerEnter2D ::: GameOverDetector");
             GameManager.instance.GameOver();
         }
 

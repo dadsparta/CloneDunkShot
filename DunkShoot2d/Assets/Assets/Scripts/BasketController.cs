@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Assets.Scripts;
 using UnityEngine;
 
 public class BasketController : MonoBehaviour
@@ -14,6 +15,7 @@ public class BasketController : MonoBehaviour
 
     public void UpdateBasket(Vector2 pos)
     {
+        ScoreStateDatabase.Score++;
         basketTransform.gameObject.SetActive(true);
         basketTransform.position = pos;
     }

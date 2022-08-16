@@ -52,10 +52,7 @@ namespace Assets.Scripts
 
         public void Show()
         {
-            if (!BallStatesDatabase.IsInBasket)
-            {
-                pointParent.gameObject.SetActive(true);
-            }
+            pointParent.gameObject.SetActive(true);
         }
     }
 }

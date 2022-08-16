@@ -1,8 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public static class GameStateDatabase
+namespace Assets.Scripts.Database
 {
-    public static bool IsGameOver { get; set; }
+    public static class GameStateDatabase
+    {
+        public static bool IsGameOver { get; set; }
+
+        public static bool IsStartGame { get; set; } = true;
+    }
 }

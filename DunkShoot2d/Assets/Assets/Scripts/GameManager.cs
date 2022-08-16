@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Assets.Scripts;
 using Assets.Scripts.Database;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
@@ -12,7 +13,7 @@ public class GameManager : MonoBehaviour
 
     #region Parameters
 
-    
+
 
     public static GameManager instance;
     [SerializeField] private BallController ball;
@@ -20,6 +21,16 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject basketPrefab;
     [SerializeField] private Transform basketParent;
     [SerializeField] private GameOverController _gameOverController;
+    [SerializeField] public Animator backgroundAnimator;
+
+    [Header("UI")] 
+    [SerializeField] private GameObject _gameStart;
+    [SerializeField] private GameObject _mainUI;
+    [SerializeField] private GameObject _pauseMenu;
+    [SerializeField] private GameObject _deathMenu;
+    
+    [Header("MainUiObjects")] [SerializeField]
+    private TMP_Text _counter;
 
     public float cameraOffset;
 
@@ -34,14 +45,14 @@ public class GameManager : MonoBehaviour
     private Vector2 _ballForce;
     private Vector2 _camPos;
     private Vector2 _gameOverLinePos;
-    
-    private int _indexOfBaskets = 0;
+
+    private int _indexOfBaskets;
 
     private float _basketOffsetX;
     public float basketOffsetY;
 
     public List<GameObject> basketList = new List<GameObject>();
-    
+
     private Vector2 _ballStartPos;
     private Vector3 _cameraStartPos;
     private Vector2 _gameOverLineStartPos;
@@ -50,52 +61,55 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        if(instance == null)
-        instance = this;    
+        if (instance == null)
+            instance = this;
     }
 
     private void Start()
     {
         _indexOfBaskets = 0;
         cameraOffset = (_camPos - ball.GetBallPos()).y;
-        _forceOffset = 5f;
+        _forceOffset = 10f;
         _minSpawnBasketX = -1.38f;
         _maxSpawnBasketX = 2.14f;
         _mainCamera = Camera.main;
         ball.ActivateRb();
-        
+
         SetDefaultGamePos();
-    }       
-
-
+    }
+    
     private void Update()
     {
-        if (GameStateDatabase.IsGameOver)
-            return;
         if (Input.GetMouseButtonDown(0))
         {
             BallStatesDatabase.IsInBasket = false;
             ball.DeactivateRb();
             OnDragStart();
+            if (GameStateDatabase.IsStartGame)
+            {
+                OffStartScreen();
+                GameStateDatabase.IsStartGame = false;
+            }
         }
-        if(Input.GetMouseButtonUp(0))
+
+        if (Input.GetMouseButtonUp(0))
         {
             BallStatesDatabase.IsBallDragging = false;
             BallStatesDatabase.IsFirstBasket = false;
             OnDragEnd();
         }
 
-        if(BallStatesDatabase.IsBallDragging)
+        if (BallStatesDatabase.IsBallDragging)
         {
             OnDrag();
         }
 
-        if(BallStatesDatabase.IsInBasket)
+        if (BallStatesDatabase.IsInBasket)
         {
             ball.DeactivateRb();
         }
     }
-    
+
     private void OnDragStart()
     {
         BallStatesDatabase.IsInDragArea = false;
@@ -109,13 +123,13 @@ public class GameManager : MonoBehaviour
         }
     }
 
-        
+
     private void OnDrag()
     {
         _endPos = _mainCamera.ScreenToWorldPoint(Input.mousePosition);
         _direction = (_startPos - _endPos).normalized;
-        _distance = Vector2.Distance(_startPos,_endPos);
-        
+        _distance = Vector2.Distance(_startPos, _endPos);
+
         _ballForce = _distance * _direction * _forceOffset;
 
         _trajectory.UpdatePoints(ball.GetBallPos(), _ballForce);
@@ -144,7 +158,17 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
+     //   DeathMenuShow();
+        Time.timeScale = 0;
+
+    }
+
+    public void RestartGame()
+    {
+        Time.timeScale = 1;
         BasketDataBase.IsFirstBasket = true;
+        ScoreStateDatabase.Score = 0;
+        GameStateDatabase.IsStartGame = true;
         SceneManager.LoadScene(0);
         SetDefaultGamePos();
     }
@@ -157,7 +181,8 @@ public class GameManager : MonoBehaviour
                 float basketSpawnX = Random.Range(_minSpawnBasketX, _maxSpawnBasketX);
                 Vector2 basketPos = new Vector2(basketSpawnX, (ball.GetBallPos().y + basketOffsetY));
                 basketList[_indexOfBaskets].GetComponentInChildren<BasketController>().UpdateBasket(basketPos);
-                
+                _counter.text = ScoreStateDatabase.Score.ToString();
+
                 if (_indexOfBaskets == 0)
                 {
                     _indexOfBaskets = 1;
@@ -170,28 +195,8 @@ public class GameManager : MonoBehaviour
 
             BasketDataBase.IsFirstBasket = false;
         }
-        
-    }
-    
-    private void ResetBasket()
-    {
-        for (int i = 0; i < basketList.Count; i++)
-        {
-            basketList[i].GetComponentInChildren<BasketController>().DisableBasket();
-        }
-    }
 
-    public void OnButtonReplayPressed()
-    {
-        ResetBasket();
-        _indexOfBaskets = 0;
-        GameStateDatabase.IsGameOver = false;
-        _mainCamera.transform.position = _cameraStartPos;
-        ball.SetBallPos(_ballStartPos);
-        _gameOverController.SetPosition(_gameOverLineStartPos);
-        UpdateBasket();
     }
-
 
     private void SetDefaultGamePos()
     {
@@ -201,4 +206,32 @@ public class GameManager : MonoBehaviour
         _gameOverLineStartPos = _gameOverController.GetPosition();
 
     }
+
+    private void OffStartScreen()
+    {
+        _gameStart.SetActive(false);
+        _mainUI.SetActive(true);
+    }
+
+    public void PauseGame()
+    {
+        Time.timeScale = 0;
+        _mainUI.SetActive(false);
+        _pauseMenu.SetActive(true);
+
+    }
+
+    public void ContineGame()
+    {
+        Time.timeScale = 1;
+        _pauseMenu.SetActive(false);
+        _mainUI.SetActive(true);
+    }
+
+    public void DeathMenuShow()
+    {
+        _mainUI.SetActive(false);
+        _deathMenu.SetActive(true);   
+    }
+
 }

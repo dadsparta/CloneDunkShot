@@ -1,25 +1,19 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ScoreHandler : MonoBehaviour
+namespace Assets.Scripts
 {
-    public static ScoreHandler instance;
-
-    private void Awake()
+    public class ScoreHandler : MonoBehaviour
     {
-        instance = this;
-    }
+        public static ScoreHandler instance;
 
-    public void UpdateScore()
-    {
-        ScoreStateDatabase.Score++;
-    }
+        private void Awake()
+        {
+            if (instance == null)
+            {
+                instance = this;
+            }
+        }
 
-    public void OnGameOver(int scene)
-    {
-        SceneManager.LoadScene(scene);
     }
 }
