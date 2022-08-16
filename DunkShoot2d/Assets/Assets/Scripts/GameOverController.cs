@@ -4,9 +4,11 @@ namespace Assets.Scripts
 {
     public class GameOverController : MonoBehaviour
     {
+        [SerializeField] private GameObject _pauseMenu;
+        [SerializeField] private GameObject _mainUI;
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            GameManager.instance.GameOver();
+            GameManager.instance.GameOver(_pauseMenu,_mainUI);
         }
 
 

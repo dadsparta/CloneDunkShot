@@ -23,6 +23,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameOverController _gameOverController;
     [SerializeField] public Animator backgroundAnimator;
 
+    [Header("AudioSources")] 
+    [SerializeField] private AudioClip _hoopClip;
+    [SerializeField] private AudioSource _audioSource;
+    [SerializeField] private AudioClip _basketSpawnClip;
+
     [Header("UI")] 
     [SerializeField] private GameObject _gameStart;
     [SerializeField] private GameObject _mainUI;
@@ -142,23 +147,22 @@ public class GameManager : MonoBehaviour
         {
             ball.ActivateRb();
             ball.AddForce(_ballForce);
+            _audioSource.PlayOneShot(_hoopClip);
             _trajectory.Hide();
         }
     }
 
     private void LateUpdate()
     {
-        if (GameStateDatabase.IsGameOver)
-            return;
         _camPos.y = ball.GetBallPos().y + cameraOffset;
         Vector3 smoothPos = Vector3.Lerp(_mainCamera.transform.position, _camPos, 0.05f);
         smoothPos.z = -10f;
         _mainCamera.transform.position = smoothPos;
     }
 
-    public void GameOver()
+    public void GameOver(GameObject deathMenu, GameObject pauseMenu)
     {
-     //   DeathMenuShow();
+        DeathMenuShow(pauseMenu,deathMenu);
         Time.timeScale = 0;
 
     }
@@ -181,6 +185,7 @@ public class GameManager : MonoBehaviour
                 float basketSpawnX = Random.Range(_minSpawnBasketX, _maxSpawnBasketX);
                 Vector2 basketPos = new Vector2(basketSpawnX, (ball.GetBallPos().y + basketOffsetY));
                 basketList[_indexOfBaskets].GetComponentInChildren<BasketController>().UpdateBasket(basketPos);
+                _audioSource.PlayOneShot(_basketSpawnClip);
                 _counter.text = ScoreStateDatabase.Score.ToString();
 
                 if (_indexOfBaskets == 0)
@@ -228,10 +233,10 @@ public class GameManager : MonoBehaviour
         _mainUI.SetActive(true);
     }
 
-    public void DeathMenuShow()
+    public void DeathMenuShow(GameObject mainMenu, GameObject deathMenu)
     {
-        _mainUI.SetActive(false);
-        _deathMenu.SetActive(true);   
+        mainMenu.SetActive(false);
+        deathMenu.SetActive(true);   
     }
 
 }
